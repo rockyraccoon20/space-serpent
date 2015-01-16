@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Space Serpent</title>
-    <script type="text/javascript" src="space.js"></script>
     <link rel="stylesheet" type="text/css" href="space.css">
 </head>
 
 <body>
-	<h1>Space Serpent</h1>
+    <h1>Space Serpent</h1>
     <script type="text/javascript">
     var
     /**
@@ -98,7 +97,7 @@
         /* number, the direction */
         last: null,
         /* Object, pointer to the last element in
-        						the queue */
+                                the queue */
         _queue: null,
         /* Array<number>, data representation*/
         /**
@@ -169,7 +168,7 @@
             // add the canvas element to the body of the document
             document.body.appendChild(canvas);
             // sets an base font for bigger score display
-            ctx.font = "12px Helvetica";
+            ctx.font = "22px Helvetica";
             frames = 0;
             keystate = {};
             // keeps track of the keybourd input
@@ -201,17 +200,17 @@
          * The game loop function, used for game updates and rendering
          */
     function loop() {
-            update();
-            draw();
-            // When ready to redraw the canvas call the loop function
-            // first. Runs about 60 frames a second
-            window.requestAnimationFrame(loop, canvas);
-        }
+        update();
+        draw();
+        // When ready to redraw the canvas call the loop function
+        // first. Runs about 60 frames a second
+        window.requestAnimationFrame(loop, canvas);
+    }
 
 
-        /**
-         * Updates the game logic
-         */
+    /**
+     * Updates the game logic
+     */
     function update() {
             frames++;
             // changing direction of the snake depending on which keys
@@ -256,6 +255,10 @@
                 ) {
                     return init();
                 }
+                // nx = 0 > nx ? grid.width - 1 : nx % grid.width;
+                // ny = 0 > ny ? grid.height - 1 : ny % grid.height;
+                // if (grid.get(nx, ny) === SNAKE) return init();﻿
+
                 // check wheter the new position are on the fruit item
                 if (grid.get(nx, ny) === FRUIT) {
                     // increment the score and sets a new fruit position
@@ -291,7 +294,7 @@
                             break;
                         case SNAKE:
                             ctx.fillStyle = "#fff";
-                            ctx.strokeStyle= "ffff00"
+                            ctx.strokeStyle = "ffff00"
                             break;
                         case FRUIT:
                             ctx.fillStyle = "#ffff00";
