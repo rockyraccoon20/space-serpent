@@ -10,9 +10,10 @@
 <body>
     <h1>Space Serpent</h1>
     <script type="text/javascript">
+
     var
     /**
-     * Constats
+     * Constants
      */
         COLS = 36,
         ROWS = 29,
@@ -247,6 +248,10 @@
                     case DOWN:
                         ny++;
                         break;
+                    default:
+                        alert('Where are you going?');
+                        break;
+
                 }
                 // checks all gameover conditions
                 if (0 > nx || nx > grid.width - 1 ||
@@ -299,6 +304,9 @@
                         case FRUIT:
                             ctx.fillStyle = "#ffff00";
                             break;
+
+                        default:  // make sure you have a default with switch
+                            ctx.fillstyle = '#fff'
                     }
                     ctx.fillRect(x * tw, y * th, tw, th);
                 }
